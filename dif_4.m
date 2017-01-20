@@ -1,9 +1,9 @@
 clear all;clc;close all;
-fs = 48000; % in Hz
-cutoff1 = 100; % in Hz
-cutoff2 = 16000; % in Hz
+fs = 48000; % Sampling rate in Hz
+cutoff1 = 100; % Lower cutoff frequency in Hz
+cutoff2 = 16000; % Higher cutoff frequency in Hz
 order = 10000; % should be even number %%order = 1000, and blackman window for good resemblence,
-t = -order/2:order/2;  % This will be a 13-tap filter
+t = -order/2:order/2;  % 
 win = blackman(length(t))';%rectwin(length(t))';% % hamming(length(t))';bartlett(length(t))';
 r1 = 2*cutoff1/fs;
 r2 = 2*cutoff2/fs;
