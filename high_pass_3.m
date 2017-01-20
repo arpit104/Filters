@@ -1,8 +1,8 @@
 clear all;clc;close all;
-fs = 8000; % in Hz
-cutoff1 = 500; % in Hz
+fs = 8000; % Sampling rate in Hz 
+cutoff1 = 500; % High pass cutoff in Hz
 order = 50; % should be even number %%order = 50, and blackman window for good highpass operation
-t = -order/2:order/2;  % This will be a 13-tap filter
+t = -order/2:order/2;  % 
 win = blackman(length(t))';%rectwin(length(t))';% % hamming(length(t))';bartlett(length(t))';
 r1 = 2*cutoff1/fs;
 B = (sinc(t) - sinc(r1*t).*r1).*win; figure;plot(B);
